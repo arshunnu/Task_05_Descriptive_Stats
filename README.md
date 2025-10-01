@@ -1,17 +1,16 @@
 # 🧠 Research Task 05 — LLM vs Python Stats Check
 
 **Dataset:** Syracuse University Women’s Lacrosse (2025 Season)  
-**Goal:** See how well ChatGPT can read and analyze real game data, then verify it with Python.
-
----
-
-## 🎯 What This Is
-This project compares what **ChatGPT** says about a small sports dataset with what **Python** actually calculates.
 
 I asked the model 3 basic questions:
-1. How many games were played, and what’s the record (Home/Away)?
-2. Should the team focus more on offense or defense to flip close losses?
-3. Which opponent could they beat next time with a small change?
+
+1. How many games did the team play?
+2. What was the overall record?
+3. What was the home record?
+4. What was the away record?
+5. What was the avg goal count for?
+6. What was the avg goal count against?
+7. What was the avg goal count difference?
 
 Everything’s checked against ground truth using a Python script.
 
