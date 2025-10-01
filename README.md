@@ -2,7 +2,7 @@
 
 **Dataset:** Syracuse University Women’s Lacrosse (2025 Season)  
 
-I asked the model 3 basic questions:
+I asked the model a few basic questions:
 
 1. How many games did the team play?
 2. What was the overall record?
