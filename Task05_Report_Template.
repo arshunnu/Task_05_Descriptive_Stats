@@ -1,0 +1,98 @@
+### 📘 Research Task 05 – Descriptive Statistics + LLM Verification
+
+**Dataset:** Syracuse University Women’s Lacrosse (2025 Season)
+**Toolchain:** Python (pandas + openpyxl) | ChatGPT 4o | Excel
+
+---
+
+#### 1️⃣ Overview
+
+This task evaluates how reliably a large-language-model (LLM) answers natural-language questions about a structured dataset, compared with ground-truth statistics computed in Python.
+
+The dataset includes 15 game records for the 2025 season with the following columns:
+`Date, Opponent, Location, Result, Goals_For, Goals_Against`.
+
+---
+
+#### 2️⃣ LLM Prompts Used
+
+Three analytical prompts were posed (see `prompts.txt`).
+
+1. Record & splits – total games, overall record, Home vs Away breakdown.
+2. Offense vs Defense impact – reasoning which side to improve.
+3. Game-changer target – pick one rematch and suggest an adjustment.
+
+---
+
+#### 3️⃣ LLM Responses
+
+Final answers are stored in `llm_response_summary.txt`.
+
+A separate document (`docs/LLM_Discrepancy_Report.md`) records the **first-run errors** and **second-run corrections**, highlighting initial mis-counts and averages.
+
+---
+
+#### 4️⃣ Ground-Truth Computation
+
+Executed:
+
+```bash
+python stats_verification.py
+```
+
+Output: `ground_truth_report.xlsx`
+
+**Key Summary (Sheet 1):**
+
+| Metric            | Value |
+| ----------------- | ----- |
+| Games Played      | 15    |
+| Overall Record    | 9–6   |
+| Home Record       | 6–1   |
+| Away Record       | 3–3   |
+| Avg Goals For     | 13.73 |
+| Avg Goals Against | 10.40 |
+| Avg Goal Diff     | +3.33 |
+
+Additional sheets: *Wins_Detail*, *Losses_Detail*, *Highlights* (biggest win & toughest loss).
+
+---
+
+#### 5️⃣ Analysis & Comparison
+
+| Checkpoint        | LLM (2nd Run) | Python Truth | Match? |
+| ----------------- | ------------- | ------------ | ------ |
+| Games Played      | 15            | 15           | ✅      |
+| Overall Record    | 9-6           | 9-6          | ✅      |
+| Avg Goals For     | 13.7          | 13.73        | ✅      |
+| Avg Goals Against | 10.4          | 10.40        | ✅      |
+
+The first LLM attempt under-counted games (10 instead of 15) and inflated averages, likely due to incomplete row parsing. After explicit context clarification, the second run aligned fully with ground truth.
+
+---
+
+#### 6️⃣ Reflection / Limitations
+
+* **Parsing Bias:** LLM may skip rows or misread headers without explicit schema.
+* **Reasoning Depth:** LLM correctly reasoned qualitatively once quantities were fixed.
+* **Automation Advantage:** The Python script provides auditable and repeatable verification.
+
+---
+
+#### 7️⃣ Environment & Time Log
+
+* Python 3.10, pandas 2.x, openpyxl 3.x
+* ChatGPT 4o (Oct 2025)
+* Estimated time: 3 hrs (dataset prep + prompting + verification + reporting)
+
+---
+
+#### 8️⃣ Submission Checklist
+
+✅ `prompts.txt`
+✅ `llm_response_summary.txt`
+✅ `stats_verification.py`
+✅ `ground_truth_report.xlsx`
+✅ `docs/LLM_Discrepancy_Report.md`
+✅ This write-up (`Task05_Report_Template.md`)
+
