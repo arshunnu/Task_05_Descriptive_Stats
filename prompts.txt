@@ -1,0 +1,46 @@
+How many games did the team play? 
+- 10
+
+What was the overall record? 
+- 6-4
+
+What was the home record? 
+- 4-1
+
+What was the away record? 
+- 2-3
+
+What was the avg goal count for? 
+- 14.1
+
+What was the avg goal count against? 
+- 10.6
+
+What was the avg goal count difference?
+- 3.5
+
+ChatGPT was not confused as to which file to read and what data to consider and the above responses are obtained when it was told to auto detect the file. 
+All of the answers above are incorrect. 
+
+After i asked it do an analysis for a second time it came up with the right answers. 
+
+How many games did the team play? 
+- 15
+
+What was the overall record? 
+- 9-6
+
+What was the home record? 
+- 6-1
+
+What was the away record? 
+- 3-3
+
+What was the avg goal count for? 
+- 13.73
+
+What was the avg goal count against? 
+- 10.40
+
+What was the avg goal count difference?
+- +3.33
